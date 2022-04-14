@@ -1,0 +1,17 @@
+version: '3.5'
+
+volumes:
+  postgres9.6:
+
+services:
+
+  db:
+    image: bitnami/postgresql:9.6
+    environment:
+      "POSTGRESQL_DATABASE": 'demodb'
+      "POSTGRESQL_USERNAME": 'demouser'
+      "POSTGRESQL_PASSWORD": 'demopassword'
+    ports:
+    - "5432:5432"
+    volumes:
+      - postgres9.6:/bitnami/postgresql
